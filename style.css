@@ -1,0 +1,430 @@
+/* ==================== Imports & Font Definitions ==================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+@font-face {
+    font-family: 'Franklin Gothic LT';
+    src: local('Franklin Gothic Medium'), local('Franklin Gothic'),
+         url('your-font-file.woff2') format('woff2'), 
+         url('your-font-file.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ==================== HTML ==================== */
+html {
+    scroll-snap-type: y mandatory;
+  }
+  .intro-section, .about-section, .work-section, .portfolio-section {
+    scroll-snap-align: start;
+    min-height: 100vh;
+  }  
+
+/* ==================== Scroll Snap ==================== */
+.snap-container {
+	scroll-snap-type: y mandatory;
+	overflow-y: scroll;
+	height: 100vh; /* container height */
+}
+
+.intro-section, .about-section, .work-section, .portfolio-section {
+	scroll-snap-align: start;
+	min-height: 100vh; /* each section fills one screen */
+}
+
+/* ==================== Global Variables / Theme Settings ==================== */
+:root {
+    --bg-color: black;
+    --text-color: white;
+    --icon-fill: gray;
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --card-box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
+    --tool-bg: rgba(255, 255, 255, 0.2);
+    --tool-bg-hover: rgba(255, 255, 255, 0.3);
+}
+
+.light-mode {
+    --bg-color: white;
+    --text-color: black;
+    --icon-fill: black;
+    --card-bg: rgba(0, 0, 0, 0.05);
+    --card-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    --tool-bg: rgba(0, 0, 0, 0.1);
+    --tool-bg-hover: rgba(0, 0, 0, 0.2);
+}
+
+/* ==================== Base Styles ==================== */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Franklin Gothic LT', 'Franklin Gothic', Arial, sans-serif;
+    margin: 0;
+    text-align: center;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* ==================== Typography ==================== */
+h1 {
+    font-size: 64px;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.bold {
+    font-weight: 700;
+    display: block;
+    font-size: 72px;
+    margin-top: 5px;
+}
+
+.small-text {
+    font-size: 12px;
+    opacity: 0.7;
+    letter-spacing: 1px;
+    margin-bottom: 60px;
+}
+
+/* ==================== Layout & Sectioning ==================== */
+/* ===== Intro Section Layout ===== */
+.intro-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container for centering inner elements */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== About Section Layout ===== */
+.about-section {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 50px;                 
+	min-height: 100vh;
+	box-sizing: border-box;
+}
+
+/* Left column */
+.about-left {
+	text-align: left;
+}
+
+.about-left h1 {
+	line-height: 0.9;
+	margin: 0;
+	font-weight: 700;
+}
+
+/* Right column */
+.about-right {
+	text-align: right;
+	max-width: 600px;
+}
+
+.about-right h2 {
+	margin: 0;
+	font-weight: 600;
+}
+
+.about-right p {
+	line-height: 1.6;
+	margin-top: 1rem;
+}
+
+/* ===== Work Experience Section Layout ===== */
+.work-section {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 50px;
+	min-height: 100vh;
+	box-sizing: border-box;
+}
+
+/* Left column */
+.work-left {
+	text-align: left;
+}
+
+.work-left h1 {
+	line-height: 0.9;
+	margin: 0;
+	font-weight: 700;
+}
+
+/* Right column */
+.work-right {
+	text-align: right;
+	max-width: 600px;
+}
+
+/* Table */
+.experience-table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.experience-table td {
+	border: none;
+	padding: 5px 0;
+	text-align: left;
+}
+
+.experience-table td:nth-child(3) {
+    text-align: right;
+}
+
+/* Work Information */
+.company-name {
+	font-weight: bold;
+}
+
+.job-entry {
+	margin-bottom: 20px;
+}
+
+.job-title {
+	display: flex;
+	justify-content: space-between;
+	font-weight: 400;
+	margin-bottom: 5px;
+}
+
+.job-date {
+	color: gray;
+}
+
+/* ===== Portfolio Section Layout ===== */
+.portfolio-section {
+    text-align: center;
+    padding: 80px 50px;
+    background-color: var(--bg-color);
+}
+
+.portfolio-section h1 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* Portfolio Grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+/* Portfolio Items */
+.portfolio-category {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.portfolio-item {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 350px;
+}
+
+.portfolio-item img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.portfolio-item h2 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.portfolio-item p {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* Hover Effect */
+.portfolio-item:hover {
+    transform: scale(1.05);
+    box-shadow: var(--card-box-shadow);
+}
+
+/* Tool Tags */
+.tool-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	justify-content: center;
+	margin-top: 10px;
+}
+
+.tool-tags span {
+    background-color: var(--tool-bg);
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    text-transform: uppercase;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.tool-tags span:hover {
+    background-color: var(--tool-bg-hover);
+    transform: scale(1.05);
+}
+
+/* ==================== Job Container ==================== */
+.job-container {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    height: 30px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.fade-in {
+    opacity: 0;
+    font-size: 14px;
+    margin-top: 100px;
+    animation: fadeIn 0.5s ease-in-out forwards 0.5s;
+}
+
+.cursor {
+    display: inline-block;
+    width: 10px;
+    background-color: var(--text-color);
+    margin-left: 5px;
+    animation: blink 0.7s infinite;
+}
+
+/* ==================== Animations ==================== */
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ==================== Theme Toggle & Toggle Slider ==================== */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.theme-toggle svg {
+    fill: var(--icon-fill);
+    transition: fill 0.3s;
+}
+
+.toggle-slider {
+    width: 40px;
+    height: 20px;
+    background: gray;
+    border-radius: 20px;
+    position: relative;
+    transition: background 0.3s;
+}
+
+.toggle-circle {
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    transform: translateY(-50%);
+    transition: left 0.3s;
+}
+
+.light-mode .toggle-slider {
+    background: black;
+}
+
+.light-mode .toggle-circle {
+    left: 21px;
+    background: white;
+}
+
+/* ==================== Mobile View ==================== */
+@media (max-width: 768px) {
+    /* About Section overrides */
+    .about-section {
+        min-height: 100vh;        /* Fill the mobile screen */
+        display: flex;            /* Use flexbox */
+        flex-direction: column;   /* Stack elements vertically */
+        justify-content: center;  /* Center them vertically */
+        align-items: center;      /* Center them horizontally (if desired) */
+        padding: 20px;            /* Some padding so text isn't flush with edges */
+        text-align: center;       /* Center the text if you like that look */
+    }
+    
+    .about-left {
+        margin-bottom: 70px; /* space between the heading and the paragraph */
+    }
+
+    .about-left h1 br {
+        display: none;
+    }
+  
+    .about-right {
+        margin-bottom: 20px;
+        max-width: 100%; /* let the text fill more of the mobile width */
+        text-align: center; /* keep it centered, if you prefer */
+    }
+
+    .about-right h2 {
+        text-align: left;
+      }
+
+    .about-right h2 br {
+        display: none;
+    }
+
+    .about-right p br {
+        display: none;
+      }
+
+    .about-right p {
+		text-align: justify;
+        text-indent: 60px;
+	}
+  
+    /* Work Section overrides */
+    .work-section {
+        min-height: 100vh;        /* Fill the mobile screen */
+        display: flex;            /* Use flexbox */
+        flex-direction: column;   /* Stack elements vertically */
+        justify-content: center;  /* Center them vertically */
+        align-items: center;      /* Center them horizontally (if desired) */
+        padding: 20px;            /* Some padding so text isn't flush with edges */
+        text-align: center;       /* Center the text if you like that look */
+    }
+  
+    .work-left {
+      margin-bottom: 70px; /* spacing before the table */
+    }
+  
+    .work-right {
+        margin-bottom: 20px;
+        max-width: 100%;
+        text-align: left; /* or center, up to you */
+    }
+}
