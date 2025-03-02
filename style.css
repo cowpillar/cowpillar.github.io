@@ -240,13 +240,25 @@ h1 {
 
 .portfolio-item img {
     width: 100%;
+    height: auto;
     border-radius: 8px;
     margin-bottom: 15px;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
 }
 
 .portfolio-item h2 {
     font-size: 20px;
     margin: 10px 0;
+}
+
+.portfolio-item h2 a {
+    color: white;
+    transition: color 0.3s;
+}
+
+.light-mode .portfolio-item h2 a {
+    color: black;
 }
 
 .portfolio-item p {
