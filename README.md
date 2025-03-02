@@ -4,7 +4,7 @@ https://cowpillar.github.io/portfolio/
 <h2> Features </h2>
 <p>
 • Responsive design <br>
-• Dark/Light Mode <br>
+• Dark/Light mode <br>
 • Contact section <br>
 • About section <br>
 • Work Experience section <br>
