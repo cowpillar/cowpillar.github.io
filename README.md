@@ -1,15 +1,19 @@
-Personal Portfolio Website
+<h1>Personal Portfolio Website</h1>
 https://cowpillar.github.io/portfolio/
 
-Features:
-- Responsive design
-- Dark/Light Mode
-- Contact section
-- About section
-- Work Experience section
-- Project showcase
+<h2>Features:</h2>
+<p>
+• Responsive design <br>
+• Dark/Light Mode <br>
+• Contact section <br>
+• About section <br>
+• Work Experience section <br>
+• Project showcase
+</p>
 
-Technologies Used:
-- HTML
-- CSS
-- JavaScript
+<h2>Technologies Used:</h2>
+<p>
+• HTML <br>
+• CSS <br>
+• JavaScript
+</p>
