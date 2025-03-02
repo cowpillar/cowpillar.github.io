@@ -421,10 +421,23 @@ h1 {
     .work-left {
       margin-bottom: 70px; /* spacing before the table */
     }
+
+    .work-left h1 {
+        text-align: center;
+    }
   
     .work-right {
         margin-bottom: 20px;
         max-width: 100%;
         text-align: left; /* or center, up to you */
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .portfolio-item {
+        max-width: 100%;
+        width: 100%;
     }
 }
