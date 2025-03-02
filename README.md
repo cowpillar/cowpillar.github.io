@@ -19,4 +19,4 @@ https://cowpillar.github.io/portfolio/
 </p>
 
 <h2> License </h2>  
-<p>This project is licensed under the <a href="https://www.w3schools.com/](https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License v3.0</a>.</p>
+<p>This project is licensed under the <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License v3.0</a>.</p>
