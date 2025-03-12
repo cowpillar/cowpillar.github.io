@@ -7,7 +7,6 @@ https://cowpillar.github.io/portfolio/
 • Dark/Light mode <br>
 • Contact section <br>
 • About section <br>
-• Work Experience section <br>
 • Project showcase
 </p>
 
