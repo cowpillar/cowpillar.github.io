@@ -40,16 +40,6 @@ html {
     --card-box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
     --tool-bg: rgba(255, 255, 255, 0.2);
     --tool-bg-hover: rgba(255, 255, 255, 0.3);
-    --color-bg1: rgb(108, 0, 162);
-    --color-bg2: rgb(0, 17, 82);
-    --color1: 18, 113, 255;
-    --color2: 221, 74, 255;
-    --color3: 100, 220, 255;
-    --color4: 200, 50, 50;
-    --color5: 180, 180, 50;
-    --color-interactive: 140, 100, 255;
-    --circle-size: 80%;
-    --blending: hard-light;
 }
 
 .light-mode {
@@ -60,36 +50,6 @@ html {
     --card-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
     --tool-bg: rgba(0, 0, 0, 0.1);
     --tool-bg-hover: rgba(0, 0, 0, 0.2);
-    --color-bg1: rgb(255, 255, 255);
-    --color-bg2: rgb(200, 200, 200);
-    --color1: 255, 200, 200;
-    --color2: 200, 255, 200;
-    --color3: 200, 200, 255;
-    --color4: 255, 255, 200;
-    --color5: 200, 255, 255;
-    --color-interactive: 255, 200, 255;
-}
-
-.light-mode .small-text a svg {
-    fill: black;
-}
-
-.dark-mode {
-    --bg-color: black;
-    --text-color: white;
-    --icon-fill: gray;
-    --card-bg: rgba(255, 255, 255, 0.1);
-    --card-box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
-    --tool-bg: rgba(255, 255, 255, 0.2);
-    --tool-bg-hover: rgba(255, 255, 255, 0.3);
-    --color-bg1: rgb(0, 0, 0);
-    --color-bg2: rgb(20, 20, 20);
-    --color1: 30, 30, 30;
-    --color2: 50, 50, 50;
-    --color3: 70, 70, 70;
-    --color4: 90, 90, 90;
-    --color5: 110, 110, 110;
-    --color-interactive: 130, 130, 130;
 }
 
 /* ==================== Base Styles ==================== */
@@ -234,7 +194,7 @@ h1 {
 .portfolio-section {
     text-align: center;
     padding: 80px 50px;
-    background-color: transparent; /* Change to transparent */
+    background-color: var(--bg-color);
 }
 
 .portfolio-section h1 {
@@ -356,42 +316,6 @@ h1 {
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
-}
-
-@keyframes moveInCircle {
-	0% {
-		transform: rotate(0deg);
-	}
-	50% {
-		transform: rotate(180deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
-}
-
-@keyframes moveVertical {
-	0% {
-		transform: translateY(-50%);
-	}
-	50% {
-		transform: translateY(50%);
-	}
-	100% {
-		transform: translateY(-50%);
-	}
-}
-
-@keyframes moveHorizontal {
-	0% {
-		transform: translateX(-50%) translateY(-10%);
-	}
-	50% {
-		transform: translateX(50%) translateY(10%);
-	}
-	100% {
-		transform: translateX(-50%) translateY(-10%);
-	}
 }
 
 /* ==================== Theme Toggle & Toggle Slider ==================== */
@@ -518,88 +442,4 @@ h1 {
     .portfolio-item p br {
         display: none;
     }
-}
-
-/* ==================== Gradient Background ==================== */
-.gradient-bg {
-	width: 100vw;
-	height: 100vh;
-	position: fixed;
-	overflow: hidden;
-	background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
-	top: 0;
-	left: 0;
-	z-index: -1;
-	display: none;
-}
-
-.light-mode .gradient-bg {
-	display: block;
-}
-
-.gradient-bg svg {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 0;
-	height: 0;
-}
-
-.gradients-container {
-	filter: url(#goo) blur(40px);
-	width: 100%;
-	height: 100%;
-}
-
-.g1, .g2, .g3, .g4, .g5, .interactive {
-	position: absolute;
-	background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
-	mix-blend-mode: var(--blending);
-	width: var(--circle-size);
-	height: var(--circle-size);
-	top: calc(50% - var(--circle-size) / 2);
-	left: calc(50% - var(--circle-size) / 2);
-	transform-origin: center center;
-	animation: moveVertical 30s ease infinite;
-	opacity: 1;
-}
-
-.g2 {
-	background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
-	transform-origin: calc(50% - 400px);
-	animation: moveInCircle 20s reverse infinite;
-}
-
-.g3 {
-	background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 50%) no-repeat;
-	top: calc(50% - var(--circle-size) / 2 + 200px);
-	left: calc(50% - var(--circle-size) / 2 - 500px);
-	transform-origin: calc(50% + 400px);
-	animation: moveInCircle 40s linear infinite;
-}
-
-.g4 {
-	background: radial-gradient(circle at center, rgba(var(--color4), 0.8) 0, rgba(var(--color4), 0) 50%) no-repeat;
-	transform-origin: calc(50% - 200px);
-	animation: moveHorizontal 40s ease infinite;
-	opacity: 0.7;
-}
-
-.g5 {
-	background: radial-gradient(circle at center, rgba(var(--color5), 0.8) 0, rgba(var(--color5), 0) 50%) no-repeat;
-	width: calc(var(--circle-size) * 2);
-	height: calc(var(--circle-size) * 2);
-	top: calc(50% - var(--circle-size));
-	left: calc(50% - var(--circle-size));
-	transform-origin: calc(50% - 800px) calc(50% + 200px);
-	animation: moveInCircle 20s ease infinite;
-}
-
-.interactive {
-	background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 50%) no-repeat;
-	width: 100%;
-	height: 100%;
-	top: -50%;
-	left: -50%;
-	opacity: 0.7;
 }
