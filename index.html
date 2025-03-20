@@ -22,6 +22,30 @@
 </head>
 
 <body>
+	<!-- Gradient Background -->
+	<div class="gradient-bg light-mode-only">
+		<svg>
+			<defs>
+				<filter id="goo">
+					<feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+					<feColorMatrix in="blur" mode="matrix" values="
+						1 0 0 0 0  
+						0 1 0 0 0  
+						0 0 1 0 0  
+						0 0 0 20 -10" result="goo" />
+					<feBlend in="SourceGraphic" in2="goo" />
+				</filter>
+			</defs>
+		</svg>
+		<div class="gradients-container">
+			<div class="g1"></div>
+			<div class="g2"></div>
+			<div class="g3"></div>
+			<div class="g4"></div>
+			<div class="g5"></div>
+		</div>
+	</div>
+
 	<div class="snap-container">
 		<!-- ==================== Intro Section ==================== -->
 		<div id="intro" class="intro-section snap-child">
@@ -172,7 +196,22 @@
 			<!-- Tech Projects -->
 			<h2 class="portfolio-category">tech</h2>
 			<div class="portfolio-grid">
-				<!-- Project 1 -->
+
+				<div class="portfolio-item">
+					<a href="https://www.youtube.com/watch?v=S60y7EY72Vk" target="_blank">
+						<img src="https://i.postimg.cc/nhm7Qjvj/thumbnail-new.jpg" alt="Roblox Directional Combat System">
+					</a>
+					<h2><a href="https://www.youtube.com/watch?v=S60y7EY72Vk" target="_blank" style="text-decoration: none;">
+						directional combat system
+					</a></h2>    
+					<p>a combat system based on camera or <br>cursor direction (up, down, left, or right)</p>
+
+					<div class="tool-tags">
+						<span>Lua</span>
+						<span>Roblox Studio</span>
+					</div>
+				</div>
+
 				<div class="portfolio-item">
 					<a href="https://www.youtube.com/watch?v=GKb0Bc2udzQ" target="_blank">
 						<img src="https://i.postimg.cc/pVQ4xyCW/thumbnail-with-dialogue-system.png" alt="Roblox Proximity Touch Dialogue System">
@@ -180,16 +219,14 @@
 					<h2><a href="https://www.youtube.com/watch?v=GKb0Bc2udzQ" target="_blank" style="text-decoration: none;">
 						proximity/touch dialogue system
 					</a></h2>    
-					<p>a roblox dialogue system activated <br>by proximityprompt (holding E) or touch</p>
-					
-					<!-- Tools / Technologies Used -->
+					<p>a dialogue system activated <br>by proximityprompt (holding E) or touch</p>
+
 					<div class="tool-tags">
 						<span>Lua</span>
 						<span>Roblox Studio</span>
 					</div>
 				</div>
 
-				<!-- Project 2 -->
 				<div class="portfolio-item">
 					<a href="https://www.youtube.com/watch?v=zX_3l78omGs" target="_blank">
 						<img src="https://i.postimg.cc/nzzZrMBc/Menu-with-Cursor-Based-Camera.png" alt="Roblox Menu with Cursor-Based Camera">
@@ -199,14 +236,12 @@
 					</a></h2>    
 					<p>a game menu with a cursor-controlled camera, <br>contains 'play' and 'about' buttons</p>
 					
-					<!-- Tools / Technologies Used -->
 					<div class="tool-tags">
 						<span>Lua</span>
 						<span>Roblox Studio</span>
 					</div>
 				</div>
 
-				<!-- Project 3 -->
 				<div class="portfolio-item">
 					<a href="https://www.youtube.com/watch?v=rqTJRnq0SFE" target="_blank">
 						<img src="https://i.postimg.cc/D0qLPrBg/R6-Rig-with-Head-Turning.png" alt="Roblox R6 Rig with Head Turning & Idle Animation">
@@ -215,15 +250,13 @@
 						r6 rig with head turning & idle animation
 					</a></h2>    
 					<p>an r6 rig with head tracking for nearby players <br>and an idle animation</p>
-					
-					<!-- Tools / Technologies Used -->
+
 					<div class="tool-tags">
 						<span>Lua</span>
 						<span>Roblox Studio</span>
 					</div>
 				</div>
-				
-				<!-- Project 4 -->
+
 				<div class="portfolio-item">
 					<a href="https://github.com/cowpillar/gnb-macro" target="_blank">
 						<img src="https://i.postimg.cc/Fs4xdWLk/sapping.png" alt="Sap Macro">
@@ -232,14 +265,12 @@
 						sapper macro
 					</a></h2>    
 					<p>a macro that automates sapper movement <br>in guts & blackpowder</p>
-					
-					<!-- Tools / Technologies Used -->
+
 					<div class="tool-tags">
 						<span>Python</span>
 					</div>
 				</div>
 
-				<!-- Project 5 -->
 				<div class="portfolio-item">
 					<a href="https://github.com/cowpillar/chisquare2word" target="_blank">
 						<img src="https://i.postimg.cc/Dz8TJwSS/chisquare2word.jpg" alt="Chi-Square to Word">
@@ -248,8 +279,7 @@
 						chi-square to word generator
 					</a></h2>    
 					<p>a program that computes and automates <br>observed & expected values to ms word</p>
-					
-					<!-- Tools / Technologies Used -->
+
 					<div class="tool-tags">
 						<span>Python</span>
 					</div>
@@ -259,7 +289,7 @@
 			<!-- Media Projects -->
 			<h2 class="portfolio-category">media</h2>
 			<div class="portfolio-grid">
-				<!-- Project 1 -->
+
 				<div class="portfolio-item">
 					<a href="https://postimg.cc/1fMszzsR" target="_blank">
 						<img src="https://i.postimg.cc/RZxFX3Yt/image.jpg" alt="Kim Minji in a Suit Fanart" class="crop">
@@ -268,27 +298,23 @@
 						김민지
 					</a></h2>    
 					<p></p>
-					
-					<!-- Tools / Technologies Used -->
+
 					<div class="tool-tags">
 						<span>HiPaint</span>
 						<span>Photoshop</span>
 					</div>
 				</div>
 
-				<!-- Project 2 -->
 				<div class="portfolio-item">
 					<img src="https://via.placeholder.com/300x200" alt="project image" class="placeholder">
 					<h2>to be added</h2>
 					<p>Nam mollis eleifend erat. Nullam tristique eros libero. Nulla mattis felis tempus ex fermentum, ullamcorper scelerisque nunc fermentum.</p>
 
-					<!-- Tools / Technologies Used -->
 					<div class="tool-tags">
 					<span>Blender</span>
 					</div>
 				</div>			
 
-				<!-- Project 3 -->
 				<div class="portfolio-item">
 					<img src="https://via.placeholder.com/300x200" alt="project image" class="placeholder">
 					<h2>to be added</h2>
