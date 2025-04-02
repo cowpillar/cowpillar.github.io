@@ -24,6 +24,12 @@ html {
 	scroll-snap-type: y mandatory;
 	overflow-y: scroll;
 	height: 100vh;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.snap-container::-webkit-scrollbar {
+    display: none;
 }
 
 .intro-section, .about-section, .work-section, .portfolio-section {
@@ -82,6 +88,12 @@ h1 {
     opacity: 0.7;
     letter-spacing: 1px;
     margin-bottom: 60px;
+}
+
+/* ==================== Social Media Icons ==================== */
+.small-text a svg {
+    fill: var(--icon-fill);
+    transition: fill 0.3s;
 }
 
 /* ==================== Layout & Sectioning ==================== */
@@ -204,7 +216,7 @@ h1 {
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     justify-items: center;
 }
