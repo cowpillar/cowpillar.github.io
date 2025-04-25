@@ -1,5 +1,5 @@
 <h1>Personal Portfolio Website</h1>
-https://cowpillar.github.io/portfolio/
+https://cowpillar.github.io/
 
 <h2> Features </h2>
 <p>
