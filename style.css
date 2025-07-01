@@ -199,7 +199,7 @@ h1 {
 }
 
 .company-name a:hover {
-  text-decoration: italic;
+  text-decoration: underline;
 }
 
 .job-entry {
