@@ -193,6 +193,15 @@ h1 {
 	font-weight: bold;
 }
 
+.company-name a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.company-name a:hover {
+  text-decoration: underline;
+}
+
 .job-entry {
 	margin-bottom: 20px;
 }
