@@ -259,8 +259,17 @@ h1 {
     aspect-ratio: 16 / 9;
 }
 
-.portfolio-item img.crop {
-    object-position: 50% 40%;
+/* Add this for uniform video sizing */
+.portfolio-item iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    min-height: 200px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    object-fit: cover;
+    display: block;
+    background: #000;
 }
 
 .portfolio-item h2 {
