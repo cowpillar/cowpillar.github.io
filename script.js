@@ -36,30 +36,52 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    const jobTitles = ["developer.", "graphic designer.", "content creator."];
+    const jobTitles = ["developer.", "ui/ux designer.", "content creator."];
     let currentIndex = 0;
     let jobElement = document.getElementById("job-title");
 
-    function typeWriterEffect(text, i = 0) {
-        if (i < text.length) {
-            jobElement.innerHTML += text.charAt(i);
-            setTimeout(() => typeWriterEffect(text, i + 1), 100);
-        } else {
-            setTimeout(() => eraseEffect(text), 2000);
+    function startTypewriter() {
+        if (!jobElement) return;
+
+        let state = 'typing';
+        let charIndex = 0;
+        const tick = 100;
+        let pauseTicks = 0;
+
+        if (jobElement._typewriterTimer) {
+            clearInterval(jobElement._typewriterTimer);
         }
+
+        const timer = setInterval(() => {
+            const text = jobTitles[currentIndex];
+
+            if (state === 'typing') {
+                charIndex = Math.min(charIndex + 1, text.length);
+                jobElement.textContent = text.slice(0, charIndex);
+                if (charIndex >= text.length) {
+                    state = 'pause';
+                    pauseTicks = 0;
+                }
+            } else if (state === 'pause') {
+                pauseTicks++;
+                if (pauseTicks * tick >= 2000) {
+                    state = 'erasing';
+                }
+            } else if (state === 'erasing') {
+                charIndex = Math.max(charIndex - 1, 0);
+                jobElement.textContent = text.slice(0, charIndex);
+                if (charIndex <= 0) {
+                    currentIndex = (currentIndex + 1) % jobTitles.length;
+                    state = 'typing';
+                    charIndex = 0;
+                }
+            }
+        }, tick);
+
+        jobElement._typewriterTimer = timer;
     }
 
-    function eraseEffect(text, i = text.length) {
-        if (i > 0) {
-            jobElement.innerHTML = text.substring(0, i - 1);
-            setTimeout(() => eraseEffect(text, i - 1), 50);
-        } else {
-            currentIndex = (currentIndex + 1) % jobTitles.length;
-            setTimeout(() => typeWriterEffect(jobTitles[currentIndex]), 500);
-        }
-    }
-
-    setTimeout(() => typeWriterEffect(jobTitles[currentIndex]), 2000);
+    setTimeout(startTypewriter, 2000);
 
     setTimeout(() => {
         let currentWorkIndex = 0;

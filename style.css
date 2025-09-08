@@ -550,22 +550,22 @@ h1 {
 }
 
 .toggle-slider {
-    width: 40px;
-    height: 20px;
+    width: 48px;
+    height: 24px;
     background: gray;
-    border-radius: 20px;
+    border-radius: 24px;
     position: relative;
-    transition: background 0.3s;
+    transition: background 0.25s;
 }
 
 .toggle-circle {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     background: white;
     border-radius: 50%;
     position: absolute;
     top: 50%;
-    left: 3px;
+    left: 4px;
     transform: translateY(-50%);
     transition: left 0.3s;
 }
@@ -575,9 +575,29 @@ h1 {
 }
 
 .light-mode .toggle-circle {
-    left: 21px;
+    left: 24px;
     background: white;
 }
+
+.toggle-circle svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #333;
+    display: block;
+    width: 12px;
+    height: 12px;
+}
+
+.toggle-circle .icon-sun { display: none; }
+.toggle-circle .icon-moon { display: block; }
+
+.light-mode .toggle-circle .icon-sun { display: block; }
+.light-mode .toggle-circle .icon-moon { display: none; }
+
+.light-mode .toggle-circle svg { color: #ffb900; }
+.toggle-circle svg { color: #222; }
 
 /* ==================== Mobile View ==================== */
 @media (max-width: 768px) {
