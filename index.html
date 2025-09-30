@@ -4,21 +4,24 @@
 	<!-- ==================== Meta & Title ==================== -->
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Portfolio - Cheu</title>
+	<title>Portfolio - cowpillar</title>
 
 	<!-- ==================== External Stylesheet ==================== -->
-	<link rel="stylesheet" href="style.css" />  
+	<link rel="stylesheet" href="style.css" />
 </head>
 
-<body class="animated-gradient">
+<body>
+	<!-- Background Particles -->
+	<div id="particles-js" aria-hidden="true"></div>
+
 	<div class="snap-container">
 		<!-- ==================== Intro Section ==================== -->
 		<div id="intro" class="intro-section snap-child">
 			<button class="theme-toggle" aria-label="Toggle theme">
 				<div class="toggle-slider">
 					<div class="toggle-circle" aria-hidden="true">
-						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="icon-moon bi bi-moon" viewBox="0 0 16 16">
-							<path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286"/>
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="icon-moon bi bi-moon" viewBox="0 0 30 30">
+							<path d="M 22 21 C 15.373000000000001 21 10 15.626999999999999 10 9 C 10 7.05 10.475 5.215 11.3 3.588 C 6.485 5.148 3 9.665 3 15 C 3 21.627 8.373000000000001 27 15 27 C 19.678 27 23.72 24.318 25.7 20.412 C 24.534 20.79 23.292 21 22 21 z"/>
 						</svg>
 						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="icon-sun bi bi-sun" viewBox="0 0 16 16">
 							<path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
@@ -29,22 +32,22 @@
 
 			<div class="container">
 				<!-- Social Media Icons -->
-				<p class="small-text" style="display: flex; gap: 30px; align-items: center;">
+				<p class="small-text social-icons" style="display: flex; gap: 35px; align-items: center;">
 					<!-- Discord -->
 					<a href="https://discord.gg/ZdwPe8JKCC" target="_blank" style="text-decoration: none;">
-						<svg width="24" height="24" viewBox="0 0 24 24" fill="gray" xmlns="http://www.w3.org/2000/svg">
-							<path d="M20.317 4.3698C18.877 3.7378 17.332 3.2918 15.72 3.0528C15.531 3.3648 15.364 3.6868 15.224 4.0168C13.654 3.7968 12.084 3.7968 10.514 4.0168C10.374 3.6868 10.208 3.3648 10.017 3.0528C8.406 3.2918 6.861 3.7378 5.421 4.3698C2.735 8.6698 2.034 12.8198 2.276 16.9068C4.15 18.4698 6.347 19.5898 8.667 20.1778C9.079 19.5988 9.444 18.9858 9.757 18.3468C9.173 18.1468 8.613 17.8858 8.086 17.5728C8.255 17.4698 8.424 17.3688 8.585 17.2578C11.117 18.4848 13.899 18.4848 16.431 17.2578C16.592 17.3688 16.761 17.4698 16.93 17.5728C16.404 17.8858 15.844 18.1468 15.26 18.3468C15.573 18.9858 15.938 19.5988 16.35 20.1778C18.67 19.5898 20.867 18.4698 22.741 16.9068C22.988 12.8198 22.287 8.6698 19.601 4.3698H20.317Z"/>
+						<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<path d="M 19.952 5.672 C 18.048000000000002 4.141 15.036000000000001 3.8819999999999997 14.908000000000001 3.8709999999999996 C 14.707 3.8539999999999996 14.516000000000002 3.9679999999999995 14.434000000000001 4.151999999999999 C 14.428 4.163999999999999 14.362000000000002 4.3149999999999995 14.289000000000001 4.549999999999999 C 15.548000000000002 4.761999999999999 17.095000000000002 5.189999999999999 18.495 6.058999999999999 C 18.719 6.1979999999999995 18.788 6.492999999999999 18.649 6.717999999999999 C 18.559 6.863999999999999 18.402 6.943999999999999 18.242 6.943999999999999 C 18.156000000000002 6.943999999999999 18.069000000000003 6.920999999999999 17.990000000000002 6.871999999999999 C 15.584 5.38 12.578 5.305 12 5.305 C 11.422 5.305 8.415 5.38 6.011 6.872 C 5.7860000000000005 7.012 5.492 6.942 5.352 6.718 C 5.212000000000001 6.493 5.282 6.199 5.506 6.059 C 6.906000000000001 5.191 8.452 4.7620000000000005 9.712 4.550000000000001 C 9.638 4.314000000000001 9.572 4.164000000000001 9.567 4.152000000000001 C 9.484 3.968 9.294 3.852 9.092 3.872 C 8.965 3.8819999999999997 5.953000000000001 4.141 4.023000000000001 5.694 C 3.015 6.625 1 12.073 1 16.783 C 1 16.866 1.022 16.948 1.063 17.02 C 2.4539999999999997 19.463 6.247999999999999 20.103 7.1129999999999995 20.131 C 7.117999999999999 20.131 7.122999999999999 20.131 7.127999999999999 20.131 C 7.280999999999999 20.131 7.424999999999999 20.058 7.514999999999999 19.934 L 8.389999999999999 18.732 C 6.030999999999999 18.122 4.825999999999999 17.087 4.7559999999999985 17.026 C 4.557999999999998 16.851 4.538999999999999 16.549 4.713999999999999 16.351 C 4.8889999999999985 16.153 5.189999999999999 16.134 5.387999999999999 16.308 C 5.416999999999999 16.334 7.635999999999999 18.217 12 18.217 C 16.372 18.217 18.591 16.326 18.613 16.307 C 18.811 16.134999999999998 19.113 16.153 19.287 16.352 C 19.461 16.55 19.442 16.851 19.244999999999997 17.025 C 19.174999999999997 17.087 17.97 18.121 15.610999999999997 18.730999999999998 L 16.485999999999997 19.933 C 16.575999999999997 20.057 16.72 20.13 16.872999999999998 20.13 C 16.877999999999997 20.13 16.883 20.13 16.887999999999998 20.13 C 17.752999999999997 20.102999999999998 21.546999999999997 19.462999999999997 22.938 17.019 C 22.978 16.947 23 16.866 23 16.783 C 23 12.073 20.985 6.625 19.952 5.672 z M 8.891 14.87 C 7.967 14.87 7.2170000000000005 14.013 7.2170000000000005 12.956999999999999 C 7.2170000000000005 11.900999999999998 7.966 11.043999999999999 8.891 11.043999999999999 C 9.815999999999999 11.043999999999999 10.565 11.900999999999998 10.565 12.956999999999999 C 10.565 14.013 9.816 14.87 8.891 14.87 z M 15.109 14.87 C 14.185 14.87 13.435 14.013 13.435 12.956999999999999 C 13.435 11.900999999999998 14.184000000000001 11.043999999999999 15.109 11.043999999999999 C 16.033 11.043999999999999 16.783 11.900999999999998 16.783 12.956999999999999 C 16.783 14.013 16.033 14.87 15.109 14.87 z"/>
 						</svg>
 					</a>
 					<!-- GitHub -->
 					<a href="https://github.com/cowpillar" target="_blank" style="text-decoration: none;">
-						<svg width="24" height="24" viewBox="0 0 24 24" fill="gray" xmlns="http://www.w3.org/2000/svg">
+						<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 							<path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.699-2.782.603-3.369-1.342-3.369-1.342-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.682-.103-.253-.446-1.27.098-2.646 0 0 .84-.269 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.747-1.026 2.747-1.026.546 1.376.203 2.394.1 2.646.64.698 1.028 1.591 1.028 2.682 0 3.841-2.337 4.687-4.565 4.931.359.309.678.919.678 1.852 0 1.338-.012 2.419-.012 2.747 0 .267.18.577.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
 						</svg>
 					</a>
 					<!-- Roblox -->
 					<a href="https://www.roblox.com/users/108284393/profile" target="_blank" style="text-decoration: none;">
-						<svg width="23" height="23" viewBox="0 0 20 20" fill="gray" xmlns="http://www.w3.org/2000/svg">
+						<svg width="28" height="28" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 							<g transform="translate(0, -2) rotate(60, 11, 11)">
 								<path d="M12 2L2 12L12 22L22 12L12 2ZM9 12L12 9L15 12L12 15L9 12Z"/>
 							</g>
@@ -52,19 +55,19 @@
 					</a>
 					<!-- PayPal -->
 					<a href="https://www.paypal.com/paypalme/ireumichu" target="_blank" style="text-decoration: none;">
-						<svg width="24" height="24" viewBox="0 0 20 20" fill="gray" xmlns="http://www.w3.org/2000/svg">
-							<path d="M6.33 2C5.59 2 4.91 2.54 4.76 3.26L2.04 16.26C1.89 17.05 2.46 17.78 3.26 17.78H6.85L7.78 13.15H10.64C14.68 13.15 17.6 10.49 17.6 7.24C17.6 5.43 16.92 3.93 15.79 2.94C14.74 2.03 13.24 2 12.28 2H6.33ZM13.48 6.2C14.13 6.2 14.55 6.33 14.82 6.63C15.03 6.85 15.2 7.21 15.2 7.7C15.2 9.17 13.85 10.26 11.67 10.26H9.11L10.02 5.98H12.53Z"/>
+						<svg width="28" height="28" viewBox="0 0 22 22" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<path d="M 20.055 7.713 C 19.378 6.871 18.381999999999998 6.303 17.291 6.098 C 16.773 3.971 14.877 3 13.045 3 L 7.057 3 C 6.425 3 5.878 3.409 5.689 4.009 C 5.674 4.049 5.663 4.091 5.6530000000000005 4.134 L 3.034 16.262 C 3.025 16.303 3.0189999999999997 16.345 3.0149999999999997 16.387 C 3.006 16.449 3 16.513 3 16.56 C 3 17.354 3.648 18 4.444 18 L 6.76 18 L 6.492999999999999 19.262 C 6.484999999999999 19.302 6.478999999999999 19.343 6.475 19.383 C 6.465999999999999 19.445999999999998 6.459 19.509 6.459 19.555999999999997 C 6.461 20.353 7.109 21 7.905 21 L 11.164 21 C 11.219999999999999 21 11.275 20.995 11.33 20.985 C 11.879 20.922 12.341 20.548 12.521 20.022 C 12.542000000000002 19.971999999999998 12.559000000000001 19.918999999999997 12.571000000000002 19.866 L 13.475 16 L 14.873 16 C 18.238 16 20.253 14.555 20.862 11.705 C 21.278 9.752 20.653 8.456 20.055 7.713 z M 5.137 16 L 7.512 5 L 13.045 5 C 13.338 5 14.545 5.061 15.123 6.013 L 10.416999999999998 6.013 C 9.790999999999999 6.013 9.246999999999998 6.414 9.053999999999998 7.003 C 9.034999999999998 7.0520000000000005 9.020999999999999 7.103 9.011 7.154 L 7.976999999999999 12.247 L 7.183 16 L 5.137 16 z M 18.906 11.287 C 18.5 13.188 17.293 14 14.873 14 L 13.016 14 C 12.193 14 11.678 14.652 11.611 15.198 L 10.721 19 L 8.594 19 L 9.864999999999998 13 L 11.308999999999997 13 C 15.567999999999998 13 16.973999999999997 10.606 17.403 8.597999999999999 C 17.43 8.469999999999999 17.448 8.341999999999999 17.459999999999997 8.216 C 17.837999999999997 8.366999999999999 18.208999999999996 8.609 18.497999999999998 8.966999999999999 C 18.971 9.557 19.108 10.337 18.906 11.287 z"/>
 						</svg>
 					</a>
-					<!-- Twitter -->
-					<a href="https://x.com/_aacheuu" target="_blank" style="text-decoration: none;">
-						<svg width="24" height="24" viewBox="0 0 24 24" fill="gray" xmlns="http://www.w3.org/2000/svg">
-							<path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.897-.959-2.178-1.559-3.594-1.559-2.719 0-4.924 2.206-4.924 4.924 0 .39.044.765.127 1.124-4.09-.205-7.719-2.165-10.149-5.144-.423.722-.666 1.561-.666 2.475 0 1.709.869 3.213 2.191 4.096-.807-.026-1.566-.247-2.229-.616v.061c0 2.385 1.693 4.374 3.946 4.828-.413.112-.849.171-1.296.171-.317 0-.626-.031-.927-.089.627 1.956 2.445 3.379 4.6 3.419-1.68 1.319-3.809 2.107-6.102 2.107-.396 0-.787-.023-1.175-.067 2.179 1.397 4.768 2.209 7.557 2.209 9.054 0 14.001-7.496 14.001-13.986 0-.21 0-.42-.016-.63.962-.689 1.8-1.56 2.46-2.548l-.047-.02z"/>
+					<!-- SellAuth -->
+					<a href="https://cowpillar.mysellauth.com" target="_blank" style="text-decoration: none;">
+						<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<path d="M 4.4160156 1.9960938 L 1.0039062 2.0136719 L 1.0136719 4.0136719 L 3.0839844 4.0039062 L 6.3789062 11.908203 L 5.1816406 13.822266 C 4.3432852 15.161017 5.3626785 17 6.9414062 17 L 19 17 L 19 15 L 6.9414062 15 C 6.8301342 15 6.8173041 14.978071 6.8769531 14.882812 L 8.0527344 13 L 15.521484 13 C 16.247484 13 16.917531 12.605703 17.269531 11.970703 L 20.871094 5.484375 C 21.242094 4.818375 20.760047 4 19.998047 4 L 5.25 4 L 4.4160156 1.9960938 z M 7 18 C 5.8954305003384135 18 5 18.895430500338414 5 20 C 5 21.104569499661586 5.8954305003384135 22 7 22 C 8.104569499661586 22 9 21.104569499661586 9 20 C 9 18.895430500338414 8.104569499661586 18 7 18 z M 17 18 C 15.895430500338414 18 15 18.895430500338414 15 20 C 15 21.104569499661586 15.895430500338414 22 17 22 C 18.104569499661586 22 19 21.104569499661586 19 20 C 19 18.895430500338414 18.104569499661586 18 17 18 z"/>
 						</svg>
 					</a>
 					<!-- YouTube -->
 					<a href="https://www.youtube.com/@cowpillar" target="_blank" style="text-decoration: none;">
-						<svg width="24" height="24" viewBox="0 0 24 24" fill="gray" xmlns="http://www.w3.org/2000/svg">
+						<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 							<path d="M19.6 3.6H4.4C3.07 3.6 2 4.67 2 6V18C2 19.33 3.07 20.4 4.4 20.4H19.6C20.93 20.4 22 19.33 22 18V6C22 4.67 20.93 3.6 19.6 3.6ZM15.66 12.07L10.64 15.01C10.43 15.12 10.19 14.96 10.19 14.72V9.28001C10.19 9.04001 10.43 8.88001 10.64 8.99001L15.66 11.93C15.87 12.04 15.87 12.36 15.66 12.47V12.07Z"/>
 						</svg>
 					</a>
@@ -79,26 +82,25 @@
 		</div>
 
 		<!-- ==================== About Section ==================== -->
-<!--
 		<div id="about" class="about-section snap-child">
 			<div class="about-left">
 				<h1>about <br>me</h1>
 			</div>
 
 			<div class="about-right">
-				<h2>freelancer in<br> tech & media</h2>
+				<h2>game developer<br> / designer</h2>
 				<p>
-					<br> i'm currently a student. i've mostly worked on
-					<br> game and software development, along with some
-					<br> graphic design and video editing on the side.
+					<br> self-taught developer and designer
+					<br> with experience in game development,
+					<br> software engineering, and graphic design.
 					<br>
-					<br> i enjoy making things. i’ve also run a few
-					<br> social media pages and was able to grow
-					<br> engagement to hundreds of thousands.
+					<br> i enjoy creating engaging and immersive
+					<br> experiences, and i'm always exploring for
+					<br> new opportunities to learn and grow in my craft.
 				</p>
 			</div>
 		</div>
--->
+
 		<!-- ==================== Work Section ==================== -->
 		<div id="work" class="work-section snap-child">
 			<h1>work<br>experience</h1>
@@ -217,123 +219,37 @@
 				</div>
 			</div>
 
-			<h2 class="portfolio-category">systems</h2>
+			<h2 class="portfolio-category">showcase</h2>
 			<div class="portfolio-grid">
 
 				<div class="portfolio-item">
-					<a href="https://www.youtube.com/watch?v=qX8-a6Et4Dw" target="_blank">
-						<img src="https://iili.io/3Mgm4Mg.jpg" alt="Zombie Wave System">
-					</a>
-					<h2><a href="https://www.youtube.com/watch?v=qX8-a6Et4Dw" target="_blank" style="text-decoration: none;">
-						zombie wave system
-					</a></h2>    
-					<p>a wave-based zombie spawning system <br>where each wave spawns more zombies</p>
-
-					<div class="tool-tags">
-						<a href="https://discord.gg/ZdwPe8JKCC" target="_blank" style="text-decoration: none;">
-							<span>Get for Free</span>
-						</a>
-					</div>
-				</div>
-				
-				<div class="portfolio-item">
-					<a href="https://www.youtube.com/watch?v=S60y7EY72Vk" target="_blank">
-						<img src="https://iili.io/3M6vIkJ.jpg" alt="Roblox Directional Combat System">
-					</a>
-					<h2><a href="https://www.youtube.com/watch?v=S60y7EY72Vk" target="_blank" style="text-decoration: none;">
-						directional combat system
-					</a></h2>    
-					<p>a combat system based on camera or <br>cursor direction (up, down, left, or right)</p>
-
-					<div class="tool-tags">
-						<a href="https://discord.gg/ZdwPe8JKCC" target="_blank" style="text-decoration: none;">
-							<span>Get for Free</span>
-						</a>
-					</div>
-				</div>
-
-
-				<div class="portfolio-item">
-					<a href="https://www.youtube.com/watch?v=GKb0Bc2udzQ" target="_blank">
-						<img src="https://iili.io/3M6UkYX.jpg" alt="Roblox Proximity Touch Dialogue System">
-					</a>
-					<h2><a href="https://www.youtube.com/watch?v=GKb0Bc2udzQ" target="_blank" style="text-decoration: none;">
-						proximity/touch dialogue system
-					</a></h2>    
-					<p>a roblox dialogue system activated <br>by proximityprompt (holding E) or touch</p>
-					
-					<div class="tool-tags">
-						<a href="https://discord.gg/ZdwPe8JKCC" target="_blank" style="text-decoration: none;">
-							<span>Get for Free</span>
-						</a>
-					</div>
-				</div>
-
-				<div class="portfolio-item">
-					<a href="https://www.youtube.com/watch?v=zX_3l78omGs" target="_blank">
-						<img src="https://iili.io/3M6g59n.jpg" alt="Roblox Menu with Cursor-Based Camera">
-					</a>
-					<h2><a href="https://www.youtube.com/watch?v=zX_3l78omGs" target="_blank" style="text-decoration: none;">
-						menu with cursor-based camera
-					</a></h2>    
-					<p>a game menu with a cursor-controlled camera, <br>contains 'play' and 'about' buttons</p>
-					
-					<div class="tool-tags">
-						<a href="https://discord.gg/ZdwPe8JKCC" target="_blank" style="text-decoration: none;">
-							<span>Get for Free</span>
-						</a>
-					</div>
-				</div>
-
-				<div class="portfolio-item">
-					<a href="https://www.youtube.com/watch?v=rqTJRnq0SFE" target="_blank">
-						<img src="https://iili.io/3M6rdxf.jpg" alt="Roblox R6 Rig with Head Turning & Idle Animation">
-					</a>
-					<h2><a href="https://www.youtube.com/watch?v=rqTJRnq0SFE" target="_blank" style="text-decoration: none;">
-						r6 rig with head turning & idle animation
-					</a></h2>    
-					<p>an r6 rig with head tracking for nearby players <br>and an idle animation</p>
-
-					<div class="tool-tags">
-						<a href="https://discord.gg/ZdwPe8JKCC" target="_blank" style="text-decoration: none;">
-							<span>Get for Free</span>
-						</a>
-					</div>
-				</div>
-
-				<div class="portfolio-item">
-					<a href="https://www.roblox.com/games/117428580666783/Zombie-Wave-System-V2" target="_blank">
+					<a href="https://www.roblox.com/games/117428580666783/" target="_blank">
 						<img src="https://iili.io/K7uokmX.png" alt="Test" class="crop">
 					</a>
-					<h2><a href="https://www.roblox.com/games/117428580666783/Zombie-Wave-System-V2" target="_blank" style="text-decoration: none;">
+					<h2><a href="https://www.roblox.com/games/117428580666783/" target="_blank" style="text-decoration: none;">
 						zombie wave system v2
 					</a></h2>    
 					<p>showcase for <br>zombie wave system v2</p>
-					
-					<div class="tool-tags">
-						<a href="https://www.roblox.com/games/117428580666783/Zombie-Wave-System-V2" target="_blank" style="text-decoration: none;">
-							<span>Try It Out</span>
-						</a>
-						<a href="https://discord.gg/ZdwPe8JKCC" target="_blank" style="text-decoration: none;">
-							<span>Purchase</span>
-						</a>
-					</div>
 				</div>
 
 				<div class="portfolio-item">
-					<a href="https://www.roblox.com/games/74154269158127/Directional-Combat-System" target="_blank">
+					<a href="https://www.roblox.com/games/104784107698074/" target="_blank">
+						<img src="https://iili.io/KGrWOZB.png" alt="Test" class="crop">
+					</a>
+					<h2><a href="https://www.roblox.com/games/104784107698074/" target="_blank" style="text-decoration: none;">
+						build system v2
+					</a></h2>
+					<p>a building system using a tool <br>for placing and removing structures</p>
+				</div>
+
+				<div class="portfolio-item">
+					<a href="https://www.roblox.com/games/74154269158127/" target="_blank">
 						<img src="https://iili.io/KCppkw7.png" alt="Test" class="crop">
 					</a>
-					<h2><a href="https://www.roblox.com/games/74154269158127/Directional-Combat-System" target="_blank" style="text-decoration: none;">
+					<h2><a href="https://www.roblox.com/games/74154269158127/" target="_blank" style="text-decoration: none;">
 						directional combat system v2
 					</a></h2>    
-					<p>showcase for <br>directional combat system v2</p>
-					
-					<div class="tool-tags">
-						<a href="https://www.roblox.com/games/74154269158127/Directional-Combat-System" target="_blank" style="text-decoration: none;">
-							<span>Try It Out</span>
-						</a>
-					</div>
+					<p>showcase for <br>directional combat system v2</p>	
 				</div>
 
 				<div class="portfolio-item">
@@ -346,45 +262,6 @@
 						customization system
 					</a></h2>
 					<p>a system for customizing <br>player appearance</p>
-					<div class="tool-tags">
-						<a href="https://discord.gg/ZdwPe8JKCC" target="_blank" style="text-decoration: none;">
-							<span>Purchase</span>
-						</a>
-					</div>
-				</div>
-
-				<div class="portfolio-item">
-					<a href="https://youtu.be/wskTUu5qgJM" target="_blank" style="display:block;">
-						<iframe width="100%" height="200" src="https://www.youtube.com/embed/wskTUu5qgJM"
-							frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-							allowfullscreen></iframe>
-					</a>
-					<h2><a href="https://youtu.be/wskTUu5qgJM" target="_blank" style="text-decoration: none;">
-						building system (tool)
-					</a></h2>
-					<p>a building system using a tool <br>for placing and removing structures</p>
-					<div class="tool-tags">
-						<a href="https://discord.gg/ZdwPe8JKCC" target="_blank" style="text-decoration: none;">
-							<span>Purchase</span>
-						</a>
-					</div>
-				</div>
-
-				<div class="portfolio-item">
-					<a href="https://youtu.be/fRvHn6unkoM" target="_blank" style="display:block;">
-						<iframe width="100%" height="200" src="https://www.youtube.com/embed/fRvHn6unkoM"
-							frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-							allowfullscreen></iframe>
-					</a>
-					<h2><a href="https://youtu.be/fRvHn6unkoM" target="_blank" style="text-decoration: none;">
-						building system (proximity)
-					</a></h2>
-					<p>a building system using proximityprompt <br>for specific structure placement</p>
-					<div class="tool-tags">
-						<a href="https://discord.gg/ZdwPe8JKCC" target="_blank" style="text-decoration: none;">
-							<span>Purchase</span>
-						</a>
-					</div>
 				</div>
 
 				<div class="portfolio-item">
@@ -397,11 +274,6 @@
 						mystery box system
 					</a></h2>
 					<p>a mystery box system <br>with random rewards</p>
-					<div class="tool-tags">
-						<a href="https://discord.gg/ZdwPe8JKCC" target="_blank" style="text-decoration: none;">
-							<span>Purchase</span>
-						</a>
-					</div>
 				</div>
 
 				<div class="portfolio-item">
@@ -414,11 +286,73 @@
 						door/debris system
 					</a></h2>
 					<p>a system where players can spend points <br>or currency to open doors or remove debris</p>
-					<div class="tool-tags">
-						<a href="https://discord.gg/ZdwPe8JKCC" target="_blank" style="text-decoration: none;">
-							<span>Purchase</span>
-						</a>
-					</div>
+				</div>
+
+				<div class="portfolio-item">
+					<a href="https://youtu.be/wskTUu5qgJM" target="_blank" style="display:block;">
+						<iframe width="100%" height="200" src="https://www.youtube.com/embed/wskTUu5qgJM"
+							frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							allowfullscreen></iframe>
+					</a>
+					<h2><a href="https://youtu.be/wskTUu5qgJM" target="_blank" style="text-decoration: none;">
+						build system
+					</a></h2>
+					<p>a building system using a tool <br>for placing and removing structures</p>
+				</div>
+			</div>
+
+			<h2 class="portfolio-category">free assets</h2>
+			<div class="portfolio-grid">
+
+				<div class="portfolio-item">
+					<a href="https://www.youtube.com/watch?v=qX8-a6Et4Dw" target="_blank">
+						<img src="https://iili.io/3Mgm4Mg.jpg" alt="Zombie Wave System">
+					</a>
+					<h2><a href="https://www.youtube.com/watch?v=qX8-a6Et4Dw" target="_blank" style="text-decoration: none;">
+						zombie wave system
+					</a></h2>    
+					<p>a wave-based zombie spawning system <br>where each wave spawns more zombies</p>
+				</div>
+				
+				<div class="portfolio-item">
+					<a href="https://www.youtube.com/watch?v=S60y7EY72Vk" target="_blank">
+						<img src="https://iili.io/3M6vIkJ.jpg" alt="Roblox Directional Combat System">
+					</a>
+					<h2><a href="https://www.youtube.com/watch?v=S60y7EY72Vk" target="_blank" style="text-decoration: none;">
+						directional combat system
+					</a></h2>    
+					<p>a combat system based on camera or <br>cursor direction (up, down, left, or right)</p>
+				</div>
+
+
+				<div class="portfolio-item">
+					<a href="https://www.youtube.com/watch?v=GKb0Bc2udzQ" target="_blank">
+						<img src="https://iili.io/3M6UkYX.jpg" alt="Roblox Proximity Touch Dialogue System">
+					</a>
+					<h2><a href="https://www.youtube.com/watch?v=GKb0Bc2udzQ" target="_blank" style="text-decoration: none;">
+						proximity/touch dialogue system
+					</a></h2>    
+					<p>a roblox dialogue system activated <br>by proximityprompt (holding E) or touch</p>
+				</div>
+
+				<div class="portfolio-item">
+					<a href="https://www.youtube.com/watch?v=zX_3l78omGs" target="_blank">
+						<img src="https://iili.io/3M6g59n.jpg" alt="Roblox Menu with Cursor-Based Camera">
+					</a>
+					<h2><a href="https://www.youtube.com/watch?v=zX_3l78omGs" target="_blank" style="text-decoration: none;">
+						menu with cursor-based camera
+					</a></h2>    
+					<p>a game menu with a cursor-controlled camera, <br>contains 'play' and 'about' buttons</p>
+				</div>
+
+				<div class="portfolio-item">
+					<a href="https://www.youtube.com/watch?v=rqTJRnq0SFE" target="_blank">
+						<img src="https://iili.io/3M6rdxf.jpg" alt="Roblox R6 Rig with Head Turning & Idle Animation">
+					</a>
+					<h2><a href="https://www.youtube.com/watch?v=rqTJRnq0SFE" target="_blank" style="text-decoration: none;">
+						head-turning r6 rig
+					</a></h2>    
+					<p>an r6 rig with head tracking for nearby players <br>and an idle animation</p>
 				</div>
 			</div>
 
@@ -568,6 +502,66 @@
 	</div>
 -->
 	
+	<footer class="site-footer">© 2025 cowpillar. All rights reserved.</footer>
+
+	<!-- ==================== Particles.js CDN & Init ==================== -->
+	<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+	<script>
+		(function initParticles() {
+			function getThemeColors() {
+				const isLight = document.body.classList.contains('light-mode');
+				// Read from CSS variables to stay in sync with themed backgrounds
+				const styles = getComputedStyle(document.body);
+				let bg = (styles.getPropertyValue('--bg-color') || '').trim();
+				if (!bg) {
+					bg = isLight ? '#ffe3ec' : '#1e1433'; // fallback to our theme colors
+				}
+				const particle = isLight ? '#000000' : '#ffffff';
+				return { bg, particle };
+			}
+
+			function loadParticles() {
+				const colors = getThemeColors();
+				if (!window.particlesJS) return;
+				particlesJS('particles-js', {
+					particles: {
+						number: { value: 80, density: { enable: true, value_area: 800 } },
+						color: { value: colors.particle },
+						shape: { type: 'circle' },
+						opacity: { value: 0.6, random: false },
+						size: { value: 3, random: true },
+						line_linked: { enable: true, distance: 150, color: colors.particle, opacity: 0.3, width: 1 },
+						move: { enable: true, speed: 2, direction: 'none', out_mode: 'out' }
+					},
+					interactivity: {
+						detect_on: 'canvas',
+						events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
+						modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+					},
+					retina_detect: true
+				});
+				// Set background color to match theme
+				document.getElementById('particles-js').style.backgroundColor = colors.bg;
+			}
+
+			// Initialize now (after DOM is ready)
+			if (document.readyState === 'loading') {
+				document.addEventListener('DOMContentLoaded', loadParticles);
+			} else {
+				loadParticles();
+			}
+
+			// Expose a refresh function used by theme toggle
+			window.refreshParticlesForTheme = function() {
+				// Clear existing canvas
+				const container = document.getElementById('particles-js');
+				if (!container) return;
+				container.innerHTML = '';
+				loadParticles();
+			};
+		})();
+	</script>
+
 	<!-- ==================== External Script ==================== -->
 	<script src="script.js"></script>
 </body>

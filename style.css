@@ -13,6 +13,8 @@
 /* ==================== HTML ==================== */
 html {
     scroll-snap-type: y mandatory;
+    /* Ensure the root canvas also gets the themed background */
+    background-color: var(--bg-color);
 }
 
 /* ==================== Scroll Snap ==================== */
@@ -22,6 +24,8 @@ html {
 	height: 100vh;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    position: relative;
+    z-index: 1;
 }
 
 .snap-container::-webkit-scrollbar {
@@ -35,23 +39,27 @@ html {
 
 /* ==================== Global Variables / Theme Settings ==================== */
 :root {
-    --bg-color: black;
+    /* Purplish background for dark mode (more visible than near-black) */
+    --bg-color: #0e0818;
     --text-color: white;
-    --icon-fill: gray;
-    --card-bg: rgba(255, 255, 255, 0.1);
-    --card-box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
-    --tool-bg: rgba(255, 255, 255, 0.2);
-    --tool-bg-hover: rgba(255, 255, 255, 0.3);
+    --icon-fill: white;
+    --card-bg: #1d152d; /* solid dark gray for cards */
+    --card-box-shadow: 0px 0px 15px #2c114f;
+    --tool-bg: #ffffff; /* tool tags: white background in dark mode */
+    --tool-bg-hover: #f0f0f0;
+    --tool-text-color: #000000; /* black text in dark mode */
 }
 
 .light-mode {
-    --bg-color: white;
+    /* More saturated pastel pink for light mode */
+    --bg-color: #fde0e1; /* pastel pink */
     --text-color: black;
     --icon-fill: black;
-    --card-bg: rgba(0, 0, 0, 0.05);
-    --card-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-    --tool-bg: rgba(0, 0, 0, 0.1);
-    --tool-bg-hover: rgba(0, 0, 0, 0.2);
+    --card-bg: #f5babb; /* clean white cards for better contrast on pastel */
+    --card-box-shadow: 0px 0px 15px #ee6969;
+    --tool-bg: #000000; /* tool tags: black background in light mode */
+    --tool-bg-hover: #222222;
+    --tool-text-color: #ffffff; /* white text in light mode */
 }
 
 /* ==================== Base Styles ==================== */
@@ -66,21 +74,21 @@ body {
 
 /* ==================== Typography ==================== */
 h1 {
-    font-size: 64px;
+    font-size: 72px;
     font-weight: 400;
     margin: 0;
-    line-height: 1.2;
+    line-height: 1.1;
 }
 
 .bold {
     font-weight: 700;
     display: block;
-    font-size: 72px;
-    margin-top: 5px;
+    font-size: 82px;
+    margin-top: 8px;
 }
 
 .small-text {
-    font-size: 12px;
+    font-size: 16px;
     opacity: 0.7;
     letter-spacing: 1px;
     margin-bottom: 60px;
@@ -95,6 +103,21 @@ h1 {
 .small-text a:hover svg {
     fill: var(--text-color);
     transform: scale(1.2);
+}
+
+/* Ensure social icons follow theme (white in dark, black in light) and are not dimmed */
+.social-icons {
+    opacity: 1; /* override small-text default opacity */
+}
+.social-icons a {
+    color: var(--icon-fill);
+}
+.social-icons a svg {
+    fill: currentColor; /* inherit from link color */
+    transition: color 0.3s, transform 0.3s;
+}
+.social-icons a:hover {
+    color: var(--text-color);
 }
 
 /* ==================== Layout & Sectioning ==================== */
@@ -242,18 +265,18 @@ h1 {
 .work-image-placeholder {
 	width: 70px;
 	height: 70px;
-	background: var(--tool-bg);
+    background: var(--tool-bg); /* white in dark, black in light */
 	border-radius: 50%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	margin-bottom: 15px;
-	color: var(--text-color);
-	opacity: 0.8;
+    color: var(--tool-text-color); /* black in dark, white in light */
+    opacity: 1;
 }
 
 .work-item h2 {
-	font-size: 20px;
+	font-size: 24px;
 	margin: 15px 0 10px 0;
 	font-weight: 700;
 }
@@ -269,14 +292,15 @@ h1 {
 }
 
 .work-item p {
-	font-size: 14px;
-	opacity: 0.7;
+	font-size: 16px;
+    opacity: 1;
+    color: var(--text-color);
 	margin-bottom: 20px;
-	line-height: 1.4;
+	line-height: 1.5;
 }
 
 .carousel-arrow {
-	background: var(--tool-bg);
+    background: var(--card-bg);
 	border: none;
 	border-radius: 50%;
 	width: 60px;
@@ -299,13 +323,21 @@ h1 {
 }
 
 .carousel-arrow:hover {
-	background: var(--text-color);
-	color: var(--bg-color);
-	transform: scale(1.1);
+    box-shadow: var(--card-box-shadow);
+    transform: scale(1.1);
 }
 
 .carousel-arrow:active {
-	transform: scale(0.95);
+    transform: scale(0.95);
+    /* Dark mode active click effect: white background, black arrow */
+    background: #ffffff;
+    color: #000000;
+}
+
+/* Light mode active click effect: black background, white arrow */
+.light-mode .carousel-arrow:active {
+    background: #000000;
+    color: #ffffff;
 }
 
 .carousel-arrow svg {
@@ -416,7 +448,7 @@ h1 {
 }
 
 .portfolio-item h2 {
-    font-size: 20px;
+    font-size: 24px;
     margin: 10px 0;
 }
 
@@ -430,8 +462,9 @@ h1 {
 }
 
 .portfolio-item p {
-    font-size: 14px;
-    opacity: 0.7;
+    font-size: 16px;
+    opacity: 1;
+    color: var(--text-color);
 }
 
 .portfolio-item:hover {
@@ -451,14 +484,15 @@ h1 {
 
 .tool-tags span {
     background-color: var(--tool-bg);
-    padding: 5px 8px;
+    padding: 6px 10px;
     border-radius: 4px;
-    font-size: 12px;
+    font-size: 14px;
     text-transform: uppercase;
     transition: transform 0.2s ease, background-color 0.2s ease;
     display: inline-block;
     vertical-align: top;
     line-height: 1;
+    color: var(--tool-text-color);
 }
 
 .tool-tags span:hover {
@@ -467,7 +501,7 @@ h1 {
 }
 
 .tool-tags a {
-    color: inherit;
+    color: var(--tool-text-color);
     text-decoration: none;
     display: inline-block;
     vertical-align: baseline;
@@ -475,11 +509,11 @@ h1 {
 }
 
 .tool-tags a:visited {
-    color: inherit;
+    color: var(--tool-text-color);
 }
 
 .tool-tags a:hover {
-    color: inherit;
+    color: var(--tool-text-color);
 }
 
 /* ==================== Job Container ==================== */
@@ -494,7 +528,7 @@ h1 {
 
 .fade-in {
     opacity: 0;
-    font-size: 14px;
+    font-size: 16px;
     margin-top: 100px;
     animation: fadeIn 0.5s ease-in-out forwards 0.5s;
 }
@@ -515,18 +549,6 @@ h1 {
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
-}
-
-.animated-gradient {
-    animation: animateBg 20s linear infinite;
-    background-image: linear-gradient(0deg, #050106, #0b010c, #100213, #150219, #1b031f, #050106, #0b010c);
-    background-size: 100% 600%;
-}
-
-.light-mode.animated-gradient {
-    background-image: linear-gradient(0deg,#bdd0c4,#9ab7d3,#f5d2d3,#f7e1d3,#dfccf1,#bdd0c4,#9ab7d3);
-    animation: animateBg 20s linear infinite;
-    background-size: 100% 600%;
 }
 
 @keyframes animateBg {
@@ -552,7 +574,7 @@ h1 {
 .toggle-slider {
     width: 48px;
     height: 24px;
-    background: gray;
+    background: white;
     border-radius: 24px;
     position: relative;
     transition: background 0.25s;
@@ -561,7 +583,7 @@ h1 {
 .toggle-circle {
     width: 20px;
     height: 20px;
-    background: white;
+    background: black;
     border-radius: 50%;
     position: absolute;
     top: 50%;
@@ -596,8 +618,28 @@ h1 {
 .light-mode .toggle-circle .icon-sun { display: block; }
 .light-mode .toggle-circle .icon-moon { display: none; }
 
+/* ==================== Particles Container ==================== */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    background-color: transparent;
+}
+
 .light-mode .toggle-circle svg { color: #ffb900; }
 .toggle-circle svg { color: #222; }
+
+/* ==================== Footer ==================== */
+.site-footer {
+    padding: 30px 20px;
+    text-align: center;
+    color: var(--text-color);
+    opacity: 0.8;
+}
 
 /* ==================== Mobile View ==================== */
 @media (max-width: 768px) {
