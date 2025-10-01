@@ -9,7 +9,6 @@ function toggleTheme() {
         localStorage.setItem("theme", "light");
     }
 
-    // Refresh particles background to match theme
     if (typeof window.refreshParticlesForTheme === 'function') {
         window.refreshParticlesForTheme();
     }

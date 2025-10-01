@@ -510,11 +510,10 @@
 		(function initParticles() {
 			function getThemeColors() {
 				const isLight = document.body.classList.contains('light-mode');
-				// Read from CSS variables to stay in sync with themed backgrounds
 				const styles = getComputedStyle(document.body);
 				let bg = (styles.getPropertyValue('--bg-color') || '').trim();
 				if (!bg) {
-					bg = isLight ? '#ffe3ec' : '#1e1433'; // fallback to our theme colors
+					bg = isLight ? '#ffe3ec' : '#1e1433';
 				}
 				const particle = isLight ? '#000000' : '#ffffff';
 				return { bg, particle };
@@ -540,20 +539,16 @@
 					},
 					retina_detect: true
 				});
-				// Set background color to match theme
 				document.getElementById('particles-js').style.backgroundColor = colors.bg;
 			}
 
-			// Initialize now (after DOM is ready)
 			if (document.readyState === 'loading') {
 				document.addEventListener('DOMContentLoaded', loadParticles);
 			} else {
 				loadParticles();
 			}
 
-			// Expose a refresh function used by theme toggle
 			window.refreshParticlesForTheme = function() {
-				// Clear existing canvas
 				const container = document.getElementById('particles-js');
 				if (!container) return;
 				container.innerHTML = '';

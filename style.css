@@ -13,7 +13,6 @@
 /* ==================== HTML ==================== */
 html {
     scroll-snap-type: y mandatory;
-    /* Ensure the root canvas also gets the themed background */
     background-color: var(--bg-color);
 }
 
@@ -39,27 +38,25 @@ html {
 
 /* ==================== Global Variables / Theme Settings ==================== */
 :root {
-    /* Purplish background for dark mode (more visible than near-black) */
     --bg-color: #0e0818;
     --text-color: white;
     --icon-fill: white;
-    --card-bg: #1d152d; /* solid dark gray for cards */
+    --card-bg: #1d152d;
     --card-box-shadow: 0px 0px 15px #2c114f;
-    --tool-bg: #ffffff; /* tool tags: white background in dark mode */
+    --tool-bg: #ffffff;
     --tool-bg-hover: #f0f0f0;
-    --tool-text-color: #000000; /* black text in dark mode */
+    --tool-text-color: #000000;
 }
 
 .light-mode {
-    /* More saturated pastel pink for light mode */
-    --bg-color: #fde0e1; /* pastel pink */
+    --bg-color: #fde0e1;
     --text-color: black;
     --icon-fill: black;
-    --card-bg: #f5babb; /* clean white cards for better contrast on pastel */
+    --card-bg: #f5babb;
     --card-box-shadow: 0px 0px 15px #ee6969;
-    --tool-bg: #000000; /* tool tags: black background in light mode */
+    --tool-bg: #000000;
     --tool-bg-hover: #222222;
-    --tool-text-color: #ffffff; /* white text in light mode */
+    --tool-text-color: #ffffff;
 }
 
 /* ==================== Base Styles ==================== */
@@ -72,7 +69,6 @@ body {
     transition: background 0.3s, color 0.3s;
 }
 
-/* ==================== Typography ==================== */
 h1 {
     font-size: 72px;
     font-weight: 400;
@@ -105,15 +101,14 @@ h1 {
     transform: scale(1.2);
 }
 
-/* Ensure social icons follow theme (white in dark, black in light) and are not dimmed */
 .social-icons {
-    opacity: 1; /* override small-text default opacity */
+    opacity: 1;
 }
 .social-icons a {
     color: var(--icon-fill);
 }
 .social-icons a svg {
-    fill: currentColor; /* inherit from link color */
+    fill: currentColor;
     transition: color 0.3s, transform 0.3s;
 }
 .social-icons a:hover {
@@ -265,13 +260,13 @@ h1 {
 .work-image-placeholder {
 	width: 70px;
 	height: 70px;
-    background: var(--tool-bg); /* white in dark, black in light */
+    background: var(--tool-bg);
 	border-radius: 50%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	margin-bottom: 15px;
-    color: var(--tool-text-color); /* black in dark, white in light */
+    color: var(--tool-text-color);
     opacity: 1;
 }
 
@@ -329,12 +324,10 @@ h1 {
 
 .carousel-arrow:active {
     transform: scale(0.95);
-    /* Dark mode active click effect: white background, black arrow */
     background: #ffffff;
     color: #000000;
 }
 
-/* Light mode active click effect: black background, white arrow */
 .light-mode .carousel-arrow:active {
     background: #000000;
     color: #ffffff;
@@ -635,14 +628,15 @@ h1 {
 
 /* ==================== Footer ==================== */
 .site-footer {
-    padding: 30px 20px;
+    margin-top: 75px;
     text-align: center;
     color: var(--text-color);
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 /* ==================== Mobile View ==================== */
 @media (max-width: 768px) {
+
     .about-section {
         min-height: 100vh;
         display: flex;
@@ -769,5 +763,66 @@ h1 {
 
     .portfolio-item p br {
         display: none;
+    }
+}
+
+@media (max-width: 420px) {
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .intro-section {
+        min-height: 100vh;
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+
+    .social-icons {
+        gap: 16px;
+    }
+
+    .social-icons a svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .theme-toggle {
+        top: 12px;
+        right: 12px;
+    }
+
+    h1 {
+        font-size: 44px;
+    }
+
+    .bold {
+        font-size: 52px;
+    }
+
+    .small-text {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .about-right p {
+        text-indent: 0;
+        padding-left: 8px;
+        padding-right: 8px;
+        text-align: left;
+    }
+
+    .about-section, .work-section {
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .work-item {
+        padding-left: 16px;
+        padding-right: 16px;
     }
 }
