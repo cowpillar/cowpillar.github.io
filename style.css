@@ -274,9 +274,13 @@ h1 {
     opacity: 1;
 }
 
+.work-image-placeholder {
+    flex: 0 0 auto;
+}
+
 .work-image-placeholder svg {
     width: 60%;
-    height: 60%;
+    height: auto;
     max-width: 100%;
     max-height: 100%;
     display: block;
