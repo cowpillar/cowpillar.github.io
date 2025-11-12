@@ -46,6 +46,8 @@ html {
     --tool-bg: #ffffff;
     --tool-bg-hover: #f0f0f0;
     --tool-text-color: #000000;
+    --indicator-active: #ffffff;
+    --indicator-inactive: rgba(255,255,255,0.35);
 }
 
 .light-mode {
@@ -57,6 +59,8 @@ html {
     --tool-bg: #000000;
     --tool-bg-hover: #222222;
     --tool-text-color: #ffffff;
+    --indicator-active: #000000;
+    --indicator-inactive: rgba(0,0,0,0.35);
 }
 
 /* ==================== Base Styles ==================== */
@@ -346,22 +350,29 @@ h1 {
 }
 
 .indicator {
-	width: 12px;
-	height: 12px;
-	border-radius: 50%;
-	background: var(--tool-bg);
-	cursor: pointer;
-	transition: all 0.3s ease;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--indicator-inactive);
+    cursor: pointer;
+    transition: all 0.25s ease;
 }
 
 .indicator.active {
-	background: var(--text-color);
-	transform: scale(1.2);
+    background: var(--indicator-active);
+    transform: scale(1.25);
+    box-shadow: 0 0 8px rgba(0,0,0,0.12);
 }
 
 .indicator:hover {
-	background: var(--tool-bg-hover);
-	transform: scale(1.1);
+    background: var(--indicator-inactive);
+    transform: scale(1.1);
+    opacity: 0.95;
+}
+
+.indicator.active:hover {
+    background: var(--indicator-active) !important;
+    opacity: 1 !important;
 }
 
 .company-name a:hover {
