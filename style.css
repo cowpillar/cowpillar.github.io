@@ -274,6 +274,14 @@ h1 {
     opacity: 1;
 }
 
+.work-image-placeholder svg {
+    width: 60%;
+    height: 60%;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
 .work-item h2 {
 	font-size: 24px;
 	margin: 15px 0 10px 0;
